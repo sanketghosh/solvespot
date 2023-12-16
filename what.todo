@@ -1,0 +1,14 @@
+[ x ] ticket card
+    [ x ] priority rating
+    [ x ] problem title
+    [ x ] problem description
+    [ x ] date and time, the problem submitted on
+    [ x ] progress bar
+    [ x ] status - started / not started
+    [ x ] button to delete card
+
+
+[  ] add ticket modal
+    [  ] setting up zustand store
+    [  ] modifying the dialog for multi-purpose uses as modal
+    [  ] using that modal for "add ticket"
