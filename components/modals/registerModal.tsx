@@ -8,7 +8,9 @@ function Body() {
 }
 
 export default function RegisterModal() {
-  function onSubmit() {}
+  function onSubmit() {
+    // Add registration submission logic here
+  }
 
   const registerModal = useRegisterModal();
 
@@ -16,10 +18,11 @@ export default function RegisterModal() {
     <Modal
       title="Registration"
       description="Get registered and add your ticket"
-      body={<Body />}
-      onSubmit={onSubmit}
       onModalClose={registerModal.onClose}
       isModalOpen={registerModal.isOpen}
+      body={<Body />}
+      onSubmit={onSubmit}
+      primaryButtonLabel="Register"
     />
   );
 }

@@ -2,14 +2,15 @@
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import useAddTicketModal from "@/hooks/useAddTicketModal";
+import useRegisterModal from "@/hooks/useRegisterModal";
 
 import { PlusCircle } from "lucide-react";
 import Link from "next/link";
 
-import useOpenCloseModal from "@/hooks/useAddTicketModal";
-
 export default function Navbar() {
-  const openCloseModal = useOpenCloseModal();
+  const addTicketModal = useAddTicketModal();
+  const registerModal = useRegisterModal();
 
   return (
     <nav className="bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 w-full fixed z-10">
@@ -23,7 +24,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Button
               className="flex items-center gap-1"
-              onClick={openCloseModal.onOpen}
+              onClick={addTicketModal.onOpen}
               variant={"outline"}
             >
               <p className="text-sm">Add Ticket</p>
@@ -32,7 +33,7 @@ export default function Navbar() {
             <div
               className="cursor-pointer"
               role="button"
-              onClick={openCloseModal.onOpen}
+              onClick={registerModal.onOpen}
             >
               <Avatar>
                 <AvatarFallback>SG</AvatarFallback>

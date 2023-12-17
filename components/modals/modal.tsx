@@ -1,21 +1,19 @@
 "use client";
 
-import { useCallback } from "react";
-
-/* components */
+import React, { useCallback } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 type ModalProps = {
   title?: string;
   description?: string;
-  body?: React.ReactNode;
+  body?: React.ReactElement;
   footer?: React.ReactElement;
   disabled?: boolean;
   primaryButtonLabel?: string;
@@ -35,14 +33,11 @@ export default function Modal({
   isModalOpen,
   onModalClose,
 }: ModalProps) {
-  /* modal submit function */
-
   const handleModalSubmit = useCallback(() => {
-    if (disabled) {
-      return;
+    if (!disabled) {
+      onSubmit();
     }
-    onSubmit();
-  }, []);
+  }, [onSubmit, disabled]);
 
   return (
     <Dialog open={isModalOpen}>
@@ -54,7 +49,7 @@ export default function Modal({
         <div>{body}</div>
         <div>{footer}</div>
         {primaryButtonLabel && (
-          <Button onSubmit={handleModalSubmit}>{primaryButtonLabel}</Button>
+          <Button onClick={handleModalSubmit}>{primaryButtonLabel}</Button>
         )}
       </DialogContent>
     </Dialog>
