@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+
+/* COMPONENTS */
 import Navbar from "@/components/navbar";
 import ClientOnly from "@/components/client-only";
-import AddTicketModal from "@/components/modals/addTicketModal";
-import RegisterModal from "@/components/modals/registerModal";
+import AddTicketModal from "@/components/modals/add-ticket-modal";
+import RegisterModal from "@/components/modals/register-modal";
+import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 
 export const metadata: Metadata = {
   title: "solvespot",
@@ -18,16 +21,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-onest min-h-screen">
-        <ClientOnly>
-          {/*     <RegisterModal />
-          <AddTicketModal /> */}
-          <div>
-            <Navbar />
-            <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-5">
-              {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ClientOnly>
+            <RegisterModal />
+            <AddTicketModal />
+            <div>
+              <Navbar />
+              <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-5">
+                {children}
+              </div>
             </div>
-          </div>
-        </ClientOnly>
+          </ClientOnly>
+        </ThemeProvider>
       </body>
     </html>
   );

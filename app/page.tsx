@@ -2,8 +2,6 @@
 
 /* components */
 import Footer from "@/components/footer";
-import AddTicketModal from "@/components/modals/addTicketModal";
-import RegisterModal from "@/components/modals/registerModal";
 import SearchArea from "@/components/search-area";
 import TicketCard from "@/components/ticket-card";
 import { data } from "@/data/fake-data";
@@ -13,8 +11,6 @@ import { data } from "@/data/fake-data";
 export default function Home() {
   return (
     <main className="pt-20 pb-5">
-      <RegisterModal />
-      <AddTicketModal />
       <SearchArea />
       {/* cards area */}
       <div className="w-full py-6">
