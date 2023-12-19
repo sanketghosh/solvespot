@@ -1,14 +1,15 @@
-export const problemsTags = [
+type ProblemsTagsType = {
+  value: string;
+  label: string;
+};
+
+export const problemsTags: ProblemsTagsType[] = [
   {
-    value: "software problems",
-    label: "Software Problems",
+    value: "Software Problem",
+    label: "Software Problem",
   },
   {
-    value: "hardware problems",
-    label: "Hardware Problems",
-  },
-  {
-    value: "other problems",
-    label: "Other Problems",
+    value: "Hardware Problem",
+    label: "Hardware Problem",
   },
 ];

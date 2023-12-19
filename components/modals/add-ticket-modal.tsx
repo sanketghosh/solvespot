@@ -9,12 +9,13 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import TicketFormBase from "./ticket-form-base";
 
 function Body() {
   // const [] = useState();
 
-  return (
-    <div className="space-y-6 py-5">
+  /* 
+  <div className="space-y-6 py-5">
       <Input placeholder="Ticket title" />
       <Input placeholder="Ticket description" />
       <RadioGroup
@@ -30,14 +31,14 @@ function Body() {
           <Label htmlFor="option-not-started">Not Started</Label>
         </div>
       </RadioGroup>
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <span className="flex items-center justify-between text-sm font-medium">
           <p>Importance Rating</p>
           <p>05</p>
         </span>
         <Slider defaultValue={[20]} max={100} step={20} />
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <span className="flex items-center justify-between text-sm font-medium">
           <p>Progress</p>
           <p>45%</p>
@@ -45,7 +46,10 @@ function Body() {
         <Slider defaultValue={[45]} max={100} step={1} />
       </div>
     </div>
-  );
+  
+  */
+
+  return <TicketFormBase />;
 }
 
 export default function AddTicketModal() {

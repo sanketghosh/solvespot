@@ -35,16 +35,42 @@ export default function AuthForm() {
   } = useForm<IFormInput>();
 
   return (
-    <form className="space-y-6 py-5">
-      {variant === "REGISTER" && (
+    <div>
+      <form className="space-y-6 py-5">
+        {variant === "REGISTER" && (
+          <Input
+            id="username"
+            placeholder="Username"
+            type="text"
+            {...register("name", { required: true, maxLength: 15 })}
+            disabled={isLoading}
+          />
+        )}
         <Input
-          id="username"
-          placeholder="Your Username"
-          type="text"
-          {...register("name", { required: true, maxLength: 30 })}
+          id="email"
+          placeholder="Email address"
+          type="email"
+          {...register("email", { required: true })}
           disabled={isLoading}
         />
-      )}
-    </form>
+        <Input
+          id="password"
+          placeholder="Password"
+          type="password"
+          {...register("password", { required: true, maxLength: 30 })}
+          disabled={isLoading}
+        />
+      </form>
+      <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
+        <span>
+          {variant === "LOGIN"
+            ? "New to NexTalk ?"
+            : "Already have an account ?"}
+        </span>
+        <span className="underline cursor-pointer" onClick={toggleVariant}>
+          {variant === "LOGIN" ? "Create an account" : "Login"}
+        </span>
+      </div>
+    </div>
   );
 }

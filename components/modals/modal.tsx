@@ -47,10 +47,10 @@ export default function Modal({
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
         <div>{body}</div>
-        <div>{footer}</div>
         {primaryButtonLabel && (
           <Button onClick={handleModalSubmit}>{primaryButtonLabel}</Button>
         )}
+        <div>{footer}</div>
       </DialogContent>
     </Dialog>
   );
