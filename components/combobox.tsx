@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Command, CommandGroup, CommandItem } from "./ui/command";
 import { cn } from "@/lib/utils";
-import { problemsTags } from "@/utils";
+// import { problemsTags } from "@/utils";
 
 type ComboboxProps = {
   value: string;
@@ -19,6 +19,17 @@ type ComboboxProps = {
 
 export default function Combobox({ value, setValue }: ComboboxProps) {
   const [open, setOpen] = useState<boolean>(false);
+
+  const problemsTags = [
+    {
+      value: "software Problem",
+      label: "Software Problem",
+    },
+    {
+      value: "hardware Problem",
+      label: "Hardware Problem",
+    },
+  ];
 
   return (
     <div>

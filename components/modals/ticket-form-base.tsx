@@ -91,7 +91,7 @@ export default function TicketFormBase({
     <div className="space-y-6 py-5">
       <Input placeholder={firstInpPlaceholder} />
       <Input placeholder={secondInputPlaceholder} />
-      <div>
+      <div className="flex items-center justify-between">
         <RadioGroup defaultValue="started" className="flex items-center gap-4">
           {radioItems.map((item, idx) => (
             <div className="flex items-center space-x-2" key={idx}>

@@ -5,10 +5,7 @@ import useAddTicketModal from "@/hooks/useAddTicketModal";
 
 /* COMPONENTS */
 import Modal from "@/components/modals/modal";
-import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+
 import TicketFormBase from "./ticket-form-base";
 
 function Body() {
@@ -49,7 +46,26 @@ function Body() {
   
   */
 
-  return <TicketFormBase />;
+  return (
+    <TicketFormBase
+      firstInpPlaceholder="Add Title"
+      secondInputPlaceholder="Add Description of ticket"
+      radioOptOneHtmlAttr="started"
+      radioOptionOne="Started"
+      radioOptTwoHtmlAttr="not-started"
+      radioOptionTwo="Not Started"
+      sliderOneText="Importance rating"
+      sliderOneValue={4}
+      sliderOneDefaultValue={0}
+      sliderOneMax={100}
+      sliderOneStep={20}
+      sliderTwoText="Progress"
+      sliderTwoValue={20}
+      sliderTwoDefaultValue={5}
+      sliderTwoMax={100}
+      sliderTwoStep={1}
+    />
+  );
 }
 
 export default function AddTicketModal() {
